@@ -26,16 +26,16 @@ spec:
               cpu: 50m
               memory: 50Mi
           ports:
-            - containerPort: 3000
+            - containerPort: node:latest
           startupProbe:
             tcpSocket:
-              port: 3000
+              port: node:latest
             initialDelaySeconds: 10
             periodSeconds: 5
             failureThreshold: 30
           readinessProbe:
             tcpSocket:
-              port: 3000
+              port: node:latest
             initialDelaySeconds: 5
             periodSeconds: 5
       imagePullSecrets:
